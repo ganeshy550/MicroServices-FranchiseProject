@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: regionalmanager
+
+  datasource:
+    url: jdbc:h2:mem:testdb  # H2 in-memory database URL
+    username: sa                       # Default username for H2
+    password: password                    # No password for H2 by default
+    driver-class-name: org.h2.Driver  # H2 driver class
+    platform: h2 # Hibernate dialect for H2
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # Automatically update the schema
+      dialect: org.hibernate.dialect.H2Dialect  # Use the H2 dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true       # Show SQL queries in the logs
+#    generate-ddl: true
+
+
+server:
+  port: 9095  # The port on which your application will run
